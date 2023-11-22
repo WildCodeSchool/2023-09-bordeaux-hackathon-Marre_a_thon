@@ -27,7 +27,6 @@ services:
   front-js:
     build:
       context: ./front-js
-      target: dev
     depends_on:
       database:
         condition: service_healthy

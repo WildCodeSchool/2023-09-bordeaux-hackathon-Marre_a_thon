@@ -2,7 +2,7 @@
 
 
 # Versions
-FROM node:20-alpine AS node_upstream
+FROM node:20.9-alpine AS node_upstream
 
 
 # Base stage for dev and build
@@ -14,21 +14,13 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /srv/app
 
-RUN corepack enable && \
-	corepack prepare --activate pnpm@latest && \
-	pnpm config -g set store-dir /.pnpm-store
+COPY package.json .
 
-# Next.js collects completely anonymous telemetry data about general usage.
-# Learn more here: https://nextjs.org/telemetry
-# Delete the following line in case you want to enable telemetry during dev and build.
-ENV NEXT_TELEMETRY_DISABLED 1
+RUN npm install
 
+COPY . .
 
-# Development image
-FROM base as dev
+EXPOSE 5173
 
-EXPOSE 3000
-ENV PORT 3000
-ENV HOSTNAME localhost
-
-CMD ["sh", "-c", "pnpm install; pnpm dev"]
+COPY --link --chmod=755 docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
+ENTRYPOINT ["docker-entrypoint"]
