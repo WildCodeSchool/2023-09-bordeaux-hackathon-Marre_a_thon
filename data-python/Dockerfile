@@ -13,7 +13,13 @@ RUN git clone https://github.com/streamlit/streamlit-example.git .
 
 RUN pip3 install -r requirements.txt
 
+# Dataviz
 RUN pip3 install seaborn
+RUN pip3 install matplotlib
+RUN pip3 install plotly
+ 
+# Machine Learning
+RUN pip3 install -U scikit-learn
 
 EXPOSE 8501
 
