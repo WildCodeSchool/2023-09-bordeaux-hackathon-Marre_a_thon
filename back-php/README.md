@@ -36,6 +36,7 @@ If you develop on Windows, you should edit you git configuration to change your 
 An example (a basic list of items) is provided (you can load the _simple-mvc.sql_ file in a test database). The accessible URLs are :
 
 -   Home page at [localhost:8000/](localhost:8000/)
+-   Example API at [localhost:8000/api/demo](localhost:8000/api/demo)
 
 You can find all these routes declared in the file `src/routes.php`. This is the very same file where you'll add your own new routes to the application.
 
