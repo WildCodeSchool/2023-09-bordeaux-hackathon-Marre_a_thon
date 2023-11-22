@@ -39,6 +39,22 @@ services:
         published: 5173
         protocol: tcp
 
+  data-python:
+    build:
+      context: ./data-python
+    depends_on:
+      database:
+        condition: service_healthy
+    volumes:
+      - ./data-python:/app
+    tty: true
+    ports:
+      # HTTP
+      - target: 8501
+        published: 8501
+        protocol: tcp
+
+
   database:
     image: mysql
     ports:
