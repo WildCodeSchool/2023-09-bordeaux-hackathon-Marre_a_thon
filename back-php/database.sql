@@ -16,6 +16,62 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `activities`
+--
+
+DROP TABLE IF EXISTS `activities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `activities` (
+  `activity_id` int NOT NULL AUTO_INCREMENT,
+  `activity_title` varchar(250) NOT NULL,
+  `activity_time` varchar(20) NOT NULL,
+  `activity_desc` text NOT NULL,
+  `activity_img` varchar(2050) NOT NULL,
+  `activity_url` varchar(2050) NOT NULL,
+  PRIMARY KEY (`activity_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `activities`
+--
+
+LOCK TABLES `activities` WRITE;
+/*!40000 ALTER TABLE `activities` DISABLE KEYS */;
+INSERT INTO `activities` VALUES (1,'Réaliser des boules de Noël en papier origami','2h00','Suivez un tutoriel sur YouTube pour créer des boules de Noël en papier origami en utilisant des techniques simples et artistiques.','https://www.cchobby.fr/media/catalog/product/cache/2a3c115e4a1e5edcb78d5e967ca9ecf0/v/1/v15995.jpg','https://www.youtube.com/watch?v=T5lJ18yAQ50'),(2,'Réaliser des étoiles de Noël','2h00','Apprenez à confectionner des étoiles de Noël avec du papier à l\'aide d\'un modèle trouvé sur Pinterest, ajoutant une touche artisanale à votre décoration de fêtes','https://i.pinimg.com/474x/71/c8/5c/71c85ced497a765a5b2de6cf53b683ea.jpg','https://www.pinterest.fr/pin/68746415001/'),(3,'Concevez des cartes de Noël/Nouvel An','2h00','Créez des cartes de vœux personnalisées en suivant un tutoriel sur YouTube. Ajoutez des éléments créatifs pour partager vos vœux de manière unique.','https://resize.prod.femina.ladmedia.fr/rblr/652,438/img/var/2018-12/1544628166_diy-carte-voeux.jpg','https://www.youtube.com/watch?v=Y5rBxzlbqbw'),(4,'Profitez d\'un bon moment en famille à la patinoire de Bordeaux','3h00','Passez une journée en famille à la patinoire, partageant des rires et des glissades sur la glace','https://axelvega.com/wp-content/uploads/2021/11/img-patinoire-705x408.jpg','https://axelvega.com/etablissements/patinoire-bordeaux/'),(5,'Escape game à Bordeaux sur le thème des fêtes de fin d\'années','2h00','Vivez une expérience immersive avec un escape game sur le thème des fêtes de fin d\'année à Bordeaux-Lac.','https://www.wonderbox.fr/blog/wp-content/uploads/sites/4/2023/10/escape-game-noel-chasse-tresor-1.jpg','https://otopia.fr/bordeaux/escapegame#concept'),(6,'Créer sa propre couronne de Noël','2h00','Suivez un tutoriel en ligne pour créer une couronne de Noël avec des matériaux simples et naturels.','https://www.revillonchocolatier.fr/wp-content/uploads/2022/11/comment_decorer_soi_meme_sa_couronne_de_noel.jpg','https://www.youtube.com/watch?v=Dho7uRzAsTQ'),(7,'Un weekend sensation au Futuroscope','Journée','Passez un weekend magique au Futuroscope avec des attractions spéciales et une ambiance festive pour célébrer Noël','https://www.futuroscope.com/uploads/media/cache/card_left/upload/image/lutins-et-lapin-cretin.jpg','https://www.futuroscope.com/fr/infos-pratiques/actualites/noel-au-futuroscope'),(8,'Faites un tour au marché de Noël','4h00','Explorez le marché de Noël de Bordeaux, où vous pourrez trouver des cadeaux uniques, des décorations et des spécialités locales.','https://media.sudouest.fr/6887727/1000x500/so-5fbba23d66a4bd276bfbc439-ph0.jpg?v=1637754338','https://marche-de-noel-bordeaux.com/'),(9,'Plonger dans l\'univers d\'un Noël Canadien','2h20','Découvrez l\'ambiance chaleureuse d\'un Noël canadien en dégustant une délicieuse poutine et une bière sans gluten.','https://aunouveaumonde.fr/wp-content/uploads/2020/10/AuNouveauMonde_Biere25et50.jpg','https://aunouveaumonde.fr/'),(10,'Réaliser des décorations pour vos fenêtres','3h00','Utilisez les feutres Posca pour créer des décorations personnalisées sur vos fenêtres.','https://tse3.mm.bing.net/th?id=OIP.ZEBJHbXnT5j99dUNiElQZAHaGE&pid=Api&P=0&h=180','https://www.youtube.com/watch?v=YS6haMO_mko'),(11,'Création de bougies parfumées et gourmandes.','2h30','Partez à la création artisanale de bougies parfumées et gourmandes.','https://i.pinimg.com/474x/fd/ff/bc/fdffbc6703137629ccedd5a0b0146fac.jpg','https://www.youtube.com/watch?v=9-BC7YZgd3Y&pp=ygUbZGl5IGJvdWdpZXMgcGFyZnVtw6llcyBub2Vs'),(12,'Profitez d\'un déjeuner croisière sur la Garonne !','3h00','Et quel meilleur moyen d\'admirer les belles façades de Bordeaux depuis le fleuve ? Montez à bord du Sicambre pour un déjeuner-croisière, voguez dans le Port de la lune à bord d\'un bateau et profitez de la magie de Noël !','https://www.bordeaux-tourisme.com/sites/bordeaux_tourisme/files/inline-images/_MG_6258-2-Steve%20Le%20Clech%20Photos.jpg','https://lesbateauxbordelais.com/?gad_source=1&gclid=CjwKCAiAjfyqBhAsEiwA-UdzJNDQK3_1xhkpsz1XBS6XjDhozhEizvjca26yDwpKQqIEPZvYcieOkRoCeMcQAvD_BwE');
+/*!40000 ALTER TABLE `activities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gifts`
+--
+
+DROP TABLE IF EXISTS `gifts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `gifts` (
+  `gift_id` int NOT NULL AUTO_INCREMENT,
+  `gift_title` varchar(250) NOT NULL,
+  `gift_description` text NOT NULL,
+  `gift_img` varchar(2050) NOT NULL,
+  `gift_url` varchar(2050) NOT NULL,
+  `gift_price` float DEFAULT NULL,
+  PRIMARY KEY (`gift_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gifts`
+--
+
+LOCK TABLES `gifts` WRITE;
+/*!40000 ALTER TABLE `gifts` DISABLE KEYS */;
+INSERT INTO `gifts` VALUES (1,'Culottes menstruelles lavable','Moodz propose des culottes menstruelles inclusives, respectueuses de l\'environnement.','https://moodz.co/cdn/shop/files/1.ATTITUDE_bd57f743-c6b1-4e23-942b-7d4737adc7d2.jpg?v=1686729063','https://moodz.co/',30),(2,'Comme Avant, produit cosmétiques bio.','Comme avant fabrique des produits bio, efficaces et écologiques. Historiquement engagée dans la vente de cosmétiques, la marque vend également des vêtements.','https://www.comme-avant.bio/cdn/shop/files/4_ENSEMBLE_STUDIO_2500x2500_223d3d67-3533-4338-8b58-d1aa0b56198f_1080x.jpg?v=1700497082','https://www.comme-avant.bio/#ae581',20),(3,'Kit rasage au poil','Un rasage parfait en 3 temps ! Une huile de rasage pour préparer les poils et la peau, un rasoir de barbier pour passer la lame comme un pro et une pierre d’alun pour soulager les petits bobos… On a pour vous un super trio !','https://www.bigmoustache.com/2844-home_default/rasoir-de-barbier-huile-pierre.jpg','https://www.bigmoustache.com/fr/333-rasoir-de-barbier-huile-pierre.html',49),(4,'Attrapes-rêves créatif','L\'attrape-rêves est issu d\'une croyance amérindienne. Selon la légende, si on le place au-dessus de soi quand on dort, il attrape tous tes mauvais rêves... Dans ce kit : cinq plumes, un cercle cartonné, du fil et des perles pour réaliser un attrape-rêves du plus bel effet.À partir de 5/6 ans.','https://cahiersdeconstance.42stores.com/pub/.Capture_d_e_cran_2015-08-25_a_10.14.22_m.png','https://cahiersdeconstance.42stores.com/product/loisirs-creatif-attrape-reve-rose',12),(5,'Le Slip Français','Boxer 100% fabriqué en France, pensé et conçu pour durer','https://www.leslipfrancais.fr/cdn/shop/products/1e5e5644f96001cd0fc65df622820224c05bac1e.jpg?v=1694533552&width=1336','https://www.leslipfrancais.fr/products/michel-gris-chine-boxer-long-en-coton',49),(6,'La Mariole','Simple à utiliser pour jouer à la pétanque indoor ! ou outdoor : se joue de 15 ans à 99 ans','https://lamariole.com/cdn/shop/files/PACKQUATROTRANSPARENTLDcopie.jpg?v=1684833867&width=990','https://lamariole.com/products/la-mariole%E2%84%A2-petanque-tout-terrain',12),(7,'Mug Expression Française','Un mug en faïence fabriqué en France, sérigraphié avec des expressions françaises écrites et illustrées avec humour.','https://lesraffineurs.b-cdn.net/22554-thickbox_default_2022/mug-expression-francaise.jpg','https://www.lesraffineurs.com/du-palais/2782-mug-expression-francaise.html',14.9),(8,'Bières artisanales de la Brasserie collaboratives PIP','Découvrez les Bières artisanales de la Brasserie PIP de Bègles. A récupérer en click-collect, et participez aussi à leurs différents ateliers proposés sur leur site.','https://shop.maisonpip.com/cdn/shop/products/PIP_BLANCHE_PASSION_33CL_940x.jpg?v=1604347354','https://maisonpip.com/',3),(9,'Tee-shirts personnalisés','Vous cherchez un t shirt enfant pas cher pour un événement sportif, un centre de loisirs ou pour faire un cadeau personnalisé ? Le tee shirt Regent Kids est un basique incontournable au style contemporain qui ira à tous les enfants. Disponible dans une large gamme de couleurs pour s’adapter à tous vos projets, choisissez le coloris qui ira le mieux avec vos designs et personnalisez-le de façon simple et rapide avec vos textes, logos et photos !','https://mistertee.fr/sites/default/files/styles/mistertee_product_display_large/public/regentk.jpg','https://mistertee.fr/regent-kids',8),(10,'Affiche à gratter - 100 bières à boire dans sa vie','Une grande affiche à gratter, sur laquelle figurent toutes les plus grandes et les meilleures bières.','https://lesraffineurs.b-cdn.net/27276-thickbox_default_2022/affiche-a-gratter-100-bieres-a-boire-dans-sa-vie.jpg','https://www.lesraffineurs.com/vin-et-biere/4138-affiche-a-gratter-100-bieres-a-boire-dans-sa-vie.html',29.9),(11,'Trousse en ancienne voile de bateau','Produit unique réalisé en voile recyclée et fabriqué à la Ciotat en France !','https://www.lestoilesdularge.com/cdn/shop/products/trousse-plate-petit-les-toiles-du-large-voile-bateau-49177479151942.progressive.jpg?v=1681724584','https://www.lestoilesdularge.com/collections/pochette/products/trousse-plate-petit',22),(12,'Boules de Noël au gin','Un coffret de boules de Noël remplies de gin pour décorer son sapin avec une note d’originalité, et arroser la fin du réveillon. 6 boules de 5 cl. Distillerie La Grange ','https://lesraffineurs.b-cdn.net/19151-thickbox_default_2022/boules-de-noel-au-gin.jpg','https://www.lesraffineurs.com/du-gosier/2584-boules-de-noel-au-gin.html',29),(13,'Petite box pour enfant espion','Enquête en Cavale propose aux enfants de se glisser dans la peau d\'un espion et de résoudre des enquêtes par correspondance (à partir de 7 ans).','https://www.marques-de-france.fr/wp-content/uploads/2019/12/Enquete-en-cavale-puce-a-loreille2-768x768.jpg','https://www.marques-de-france.fr/listing/en-cavale/',50),(14,'Petite arche pour bébé','L’arche d’éveil en bois avec ses mobiles suspendus. Entièrement en bois, fabriquée dans leur atelier familial des Hauts-de-France.','https://www.marques-de-france.fr/wp-content/uploads/2021/01/MaPetiteTribu-mobile-produit-phare-768x768.jpg','https://www.marques-de-france.fr/listing/mapetitetribu/',40),(15,'Livres Savoirs Terroirs','Un joli guide pratique illustré pour comprendre les bases du terroir et apprendre à choisir ses produits et les associer comme un pro.','https://lesraffineurs.b-cdn.net/28355-thickbox_default_2022/livres-savoirs-terroirs.jpg','https://www.lesraffineurs.com/a-table/4264-livres-savoirs-terroirs.html',12.9),(16,'Jeu d’ambiance Bananagrams','Un jeu d’ambiance pour 1 à 8 joueurs dans lequel chacun doit créer sa grille de mots fléchés devant lui et utiliser toutes ses lettres.','https://lesraffineurs.b-cdn.net/27349-large_default/jeu-bananagrams.jpg','https://www.lesraffineurs.com/outdoor-et-loisirs/4137-jeu-bananagrams.html',24);
+/*!40000 ALTER TABLE `gifts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `movies`
 --
 
@@ -84,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-23 15:16:26
+-- Dump completed on 2023-11-23 17:20:03
