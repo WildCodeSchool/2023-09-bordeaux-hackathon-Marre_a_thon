@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  margin: 0;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+  width: 100%;
+}
+
+.d-flex-between {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Crimson Pro", serif;
+}
+
+.d-flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Crimson Pro", serif;
+}
+
+.logo {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 700px;
+  }
+
+  .description_header {
+    font-size: 30px;
+  }
+
+  .footer {
+    font-size: 28px;
+  }
+}
