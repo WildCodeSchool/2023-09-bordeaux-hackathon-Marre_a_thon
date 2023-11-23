@@ -31,7 +31,6 @@ function Modal({ toggleModal, selectedId }) {
       getActivities();
     }
   }, [selectedId]);
-
   return (
     <div>
       {data.map((item, index) => (
