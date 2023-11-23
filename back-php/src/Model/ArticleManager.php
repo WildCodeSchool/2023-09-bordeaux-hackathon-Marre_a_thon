@@ -4,34 +4,32 @@ namespace App\Model;
 
 class ArticleManager extends AbstractManager
 {
-    public const TABLE = 'principal';
-
-    public function selecltAllMovies(): array
+    public function selectAllMovies(): array
     {
-        $query = "SELECT * FROM movies INNER JOIN principal ON movies.foreign_key = principal.primary_key";
+        $query = "SELECT * FROM movies";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
     
     }
-    public function selecltAllGifts(): array
+    public function selectAllGifts(): array
     {
-        $query = "SELECT * FROM gifts INNER JOIN principal ON gifts.foreign_key = principal.primary_key";
+        $query = "SELECT * FROM gifts";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
 
     }
-    public function selecltAllRecipes(): array
+    public function selectAllRecipes(): array
     {
-        $query = "SELECT * FROM recipies INNER JOIN principal ON recipies.foreign_key = principal.primary_key";
+        $query = "SELECT * FROM recipes";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
     }
-    public function selecltAllActivities(): array
+    public function selectAllActivities(): array
     {
-        $query = "SELECT * FROM activities INNER JOIN principal ON activities.foreign_key = principal.primary_key";
+        $query = "SELECT * FROM activities";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();

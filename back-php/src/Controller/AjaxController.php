@@ -18,25 +18,25 @@ class AjaxController extends AbstractAPIController
     public function getAllMovies(): string
     {
         $articleManager = new ArticleManager();
-        $articles = $articleManager->selecltAllMovies();
+        $articles = $articleManager->selectAllMovies();
         return json_encode($articles);
     }
     public function getAllGifts(): string
     {
         $articleManager = new ArticleManager();
-        $articles = $articleManager->selecltAllGifts();
+        $articles = $articleManager->selectAllGifts();
         return json_encode($articles);
     }
     public function getAllRecipes(): string
     {
         $articleManager = new ArticleManager();
-        $articles = $articleManager->selecltAllRecipes();
+        $articles = $articleManager->selectAllRecipes();
         return json_encode($articles);
     }
     public function getAllActivities(): string
     {
         $articleManager = new ArticleManager();
-        $articles = $articleManager->selecltAllActivities();
+        $articles = $articleManager->selectAllActivities();
         return json_encode($articles);
     }
 }

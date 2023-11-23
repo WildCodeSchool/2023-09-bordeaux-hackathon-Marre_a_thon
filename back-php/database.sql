@@ -25,6 +25,9 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `item`
 --
+DROP DATABASE IF EXISTS bordeaux_hackaton;
+CREATE DATABASE bordeaux_hackaton;
+USE bordeaux_hackaton;
 
 CREATE TABLE `item` (
   `id` int(11) UNSIGNED NOT NULL,
