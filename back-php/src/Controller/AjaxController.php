@@ -39,4 +39,10 @@ class AjaxController extends AbstractAPIController
         $articles = $articleManager->selectAllActivities();
         return json_encode($articles);
     }
+    public function getAllItem(): string
+    {
+        $articleManager = new ArticleManager();
+        $articles = $articleManager->selectAllTest();
+        return json_encode($articles);
+    }
 }
