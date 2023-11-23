@@ -18,7 +18,7 @@ RUN pip3 install seaborn
 RUN pip3 install matplotlib
 RUN pip3 install plotly
  
-# Machine Learning,
+# Machine Learning
 RUN pip3 install -U scikit-learn
 
 EXPOSE 8501
