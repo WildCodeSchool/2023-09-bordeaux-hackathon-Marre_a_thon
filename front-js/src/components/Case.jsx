@@ -3,6 +3,8 @@ import Modal from "./Modal";
 
 function Case() {
   const [toggleModal, setToggleModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+
   const casesList = [
     { id: 1, label: "1" },
     { id: 2, label: "2" },
@@ -30,6 +32,11 @@ function Case() {
     { id: 24, label: "24" },
   ];
 
+  const handleButtonClick = (id) => {
+    setSelectedId(id);
+    setToggleModal(true);
+  };
+
   return (
     <div>
       {casesList.map((item) => (
@@ -37,12 +44,19 @@ function Case() {
           key={item.id}
           className="modal"
           type="button"
-          onClick={() => setToggleModal(true)}
+          onClick={() => handleButtonClick(item.id)}
         >
-          {item.label}
+          {item.id}
         </button>
       ))}
-      <div>{toggleModal && <Modal setToggleModal={setToggleModal} />}</div>
+      <div className={`popup${toggleModal === true ? " active" : ""}`}>
+        {" "}
+        <Modal
+          toggleModal={toggleModal}
+          setToggleModal={setToggleModal}
+          selectedId={selectedId}
+        />
+      </div>
     </div>
   );
 }

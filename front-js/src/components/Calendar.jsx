@@ -1,10 +1,10 @@
 import Case from "./Case";
 
-function Calendar() {
+function Calendar({ movies, setMovies }) {
   return (
     <>
       <div>
-        <Case />
+        <Case movies={movies} setMovies={setMovies} />
       </div>
       <div className="video-background">
         <video autoPlay loop muted playsInline>

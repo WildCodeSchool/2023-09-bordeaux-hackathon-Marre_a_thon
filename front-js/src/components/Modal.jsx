@@ -1,16 +1,23 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function Modal({ toggleModal }) {
+function Modal({ toggleModal, selectedId }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const getMovies = () =>
-      axios.get("http://localhost:8000/movies").then((res) => {
-        setMovies(res.data);
-      });
-    getMovies();
-  }, []);
+    if (
+      selectedId === 2 ||
+      selectedId === 4 ||
+      selectedId === 6 ||
+      selectedId === 10
+    ) {
+      const getMovies = () =>
+        axios.get("http://localhost:8000/movies").then((res) => {
+          setMovies(res.data);
+        });
+      getMovies();
+    }
+  }, [selectedId]);
 
   return (
     <div>
