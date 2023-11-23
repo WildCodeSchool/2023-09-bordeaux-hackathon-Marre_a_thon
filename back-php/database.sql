@@ -1,63 +1,143 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- MySQL dump 10.13  Distrib 8.0.34, for macos13 (arm64)
 --
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
+-- Host: 127.0.0.1    Database: bordeaux_hackaton
+-- ------------------------------------------------------
+-- Server version	8.2.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Base de données :  `simple-mvc`
+-- Table structure for table `movies`
 --
+DROP DATABASE IF EXISTS bordeaux_hackaton;
+CREATE DATABASE bordeaux_hackaton;
+USE bordeaux_hackaton;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `item`
---
-
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `item`
---
-
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
-
---
--- Index pour les tables exportées
---
+DROP TABLE IF EXISTS `movies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `movies` (
+  `movie_id` int NOT NULL AUTO_INCREMENT,
+  `movie_title` varchar(250) NOT NULL,
+  `movie_img` varchar(2050) NOT NULL,
+  `movie_url` varchar(2050) NOT NULL,
+  `movie_time` varchar(10) NOT NULL,
+  `movie_desc` text NOT NULL,
+  `movie_avg` float DEFAULT NULL,
+  `movie_release` varchar(10) NOT NULL,
+  `movie_trailer` varchar(2050) NOT NULL,
+  PRIMARY KEY (`movie_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
+-- Dumping data for table `movies`
 --
 
+LOCK TABLES `movies` WRITE;
+/*!40000 ALTER TABLE `movies` DISABLE KEYS */;
+INSERT INTO `movies` VALUES (1,'Le père Noël est une ordure','https://www.themoviedb.org/t/p/w1280/xkTLoFbNpBPt5SyTPqllw9F97YM.jpg','https://www.themoviedb.org/movie/14645-le-pere-noel-est-une-ordure','1h45','Le soir de Noël, Pierre et Thérèse s’apprêtent à assurer la permanence de « S.O.S. Détresse‐Amitié ». Thérèse reçoit un appel de son amie Josette, une jeune clocharde qui vient de quitter Félix, son miteux compagnon. Déguisé en père Noël, celui‐ci avait passé la soirée à distribuer des prospectus sur le trottoir d’un grand magasin jusqu’à ce que le gérant le renvoie…',7.4,'1982','https://youtu.be/cm8Bk3TbSnQ'),(2,'Maman, j\'ai râté l\'avion !','https://www.themoviedb.org/t/p/w1280/aP9UrDpKS5i5PCiYKDgJvkRz7ne.jpg','https://www.themoviedb.org/movie/771-home-alone','1h43','La famille McCallister a décidé de passer les fêtes de Noël à Paris. \nSeulement Kate et Peter McCallister s\'aperçoivent dans l\'avion qu\'il \nleur manque le plus jeune de leurs enfants, Kevin, âgé de 9 ans. D\'abord\n désespéré, Kevin reprend vite les choses en main et s\'organise pour \nvivre le mieux possible. Quand deux cambrioleurs choisissent sa maison \npour commettre leurs méfaits.',7.4,'1990','https://youtu.be/GPtHAQARLdw'),(3,'Le drôle Noël de Scrooge','https://www.themoviedb.org/t/p/w1280/thn0s6e01fewLW2j1X5htgjKbeJ.jpg','https://www.themoviedb.org/movie/17979-a-christmas-carol','1h36','Parmi tous les marchands de Londres, Ebenezer Scrooge est connu comme l’un des plus riches et des plus avares. Ce vieillard solitaire et insensible vit dans l’obsession de ses livres de comptes. Ni la mort de son associé, Marley, ni la pauvre condition de son employé, Bob Cratchit, n’ont jamais réussi à l’émouvoir. De tous les jours de l’année, celui que Scrooge déteste le plus est Noël. L’idée de répandre joie et cadeaux va définitivement à l’encontre de tous ses principes ! Pourtant, cette année, Scrooge va vivre un Noël qu’il ne sera pas près d’oublier… Tout commence la veille de Noël, lorsqu’en rentrant chez lui, Scrooge a d’étranges hallucinations. Le spectre de son ancien associé lui rend la plus effrayante des visites, et lui en annonce d’autres, aussi magiques que troublantes… Scrooge se voit d’abord confronté à l’Esprit des Noëls passés, qui le replonge dans ses propres souvenirs, réveillant en lui des blessures oubliées et des regrets profondément enfouis…',6.9,'2009','https://youtu.be/GPtHAQARLdw'),(4,'L\'Étrange Noël de monsieur Jack','https://www.themoviedb.org/t/p/w1280/e5hgZBkL1kvY0fGPixZD0468VIA.jpg','https://www.themoviedb.org/movie/9479-the-nightmare-before-christmas','1h15','Jack Skellington, un épouvantail squelettique surnommé « le Roi des citrouilles », vit dans la ville d\'Halloween. En tant que maître de l\'épouvante, Jack occupe ses journées à préparer la prochaine fête d\'Halloween. Mais le terrible épouvantail, lassé de cette vie répétitive et monotone, décide de partir. C\'est alors qu\'il découvre la ville de Noël. Après cette aventure, il revient chez lui, avec une idée originale en tête : et si cette année, c\'étaient les habitants de la ville d\'Halloween qui allaient fêter Noël ?',7.8,'1993','https://youtu.be/E8o_8iKS6mk'),(5,'Le Grinch','https://www.themoviedb.org/t/p/w1280/cmbQRAux3YdOIIk9RIj1Hq3C05f.jpg','https://www.themoviedb.org/movie/8871-how-the-grinch-stole-christmas','1h44','Le Grinch est un croque-mitaine de poils verts qui arbore un sourire élastique jusqu\'aux oreilles. Misanthrope exilé, il vit depuis 53 ans dans une grotte sur le mont Crumpit avec son chien Max. Il se nourrit de jus de laitue, d\'huile de castor et de lait tourné, et a un cœur trois fois trop petit pour aimer qui que ce soit. Recueilli par deux charmantes vieilles dames, le Grinch aurait aimé avoir une enfance et une scolarité normales, avoir des copains et flirter avec la gentille Martha qui le couvait d\'un œil tendre. Mais les petits Whos se comportèrent si cruellement avec lui qu\'ils le contraignirent à l\'exil.',6.7,'2000','https://youtu.be/s8tc12mDbOY'),(6,'Love Actually','https://www.themoviedb.org/t/p/w1280/rJAML5icaPEkj8CU4wLHjpL4RWd.jpg','https://www.themoviedb.org/movie/508-love-actually','2h15','L\'amour est partout, imprévisible, inexplicable, insurmontable. Il frappe quand il veut et souvent, ça fait pas mal de dégâts... Pour le nouveau Premier Ministre britannique, il va prendre la jolie forme d\'une jeune collaboratrice. Pour l\'écrivain au coeur brisé parti se réfugier dans le sud de la France, il surgira d\'un lac. Il s\'éloigne de cette femme qui, installée dans une vie de couple ronronnante, suspecte soudain son mari de songer à une autre. Il se cache derrière les faux-semblants de ce meilleur ami qui aurait bien voulu être autre chose que le témoin du mariage de celle qu\'il aime. Pour ce veuf et son beau-fils, pour cette jeune femme qui adore son collègue, l\'amour est l\'enjeu, le but, mais également la source d\'innombrables complications. À l\'approche de Noël, à Londres, ces vies et ces amours vont se croiser, se frôler et se confronter.',7.1,'2003','https://youtu.be/g5doBFqKKpk'),(7,'Retour vers le futur','https://www.themoviedb.org/t/p/w1280/y9bs2N5rEM51YBXbU7N5PaXJc6W.jpg','https://www.themoviedb.org/movie/105-back-to-the-future','1h56','En 1985, Marty, un adolescent comme les autres, mène une existence morne et ennuyeuse. Heureusement, il est épris de la jolie Jennifer et entretient une profonde amitié avec Doc, un savant fou qui prétend avoir inventé une machine à explorer le temps. Un jour, Doc invite Marty à l\'essayer…',8.3,'1985','https://youtu.be/Q5ffxbs4vYs'),(8,'Le Pôle express','https://www.themoviedb.org/t/p/w1280/tz4DUBcxU7UowOIJwqvQfdWkU2U.jpg','https://www.themoviedb.org/movie/5255-the-polar-express','1h40','Un jeune garçon qui se met à douter de l\'existence du père Noël monte dans un train mystérieux en partance pour le pôle Nord. À mesure que le Pôle Express s\'enfonce dans des contrées enchantées, l\'aventure est au rendez-vous et les jeunes passagers prennent conscience de l\'étendue de leurs dons.',6.7,'2004','https://youtu.be/cCNy5JCfaOg'),(9,'La vie est belle','https://www.themoviedb.org/t/p/w1280/niniH26VfSTF7fefLWwipvNFGbL.jpg','https://www.themoviedb.org/movie/1585-it-s-a-wonderful-life','2h16','Bedford Falls, petite ville de l\'État de New York, la veille de Noël. De chaque foyer s\'élève une prière. Les paroles murmurées avec ferveur concernent toutes le même homme – George Bailey –, qu\'elles proviennent de la bouche de son épouse, de ses enfants, de ses amis et collègues… et de manière générale de tous ceux qui tiennent à lui. Les prières vont être exaucées et Clarence, un ange sans ailes est envoyé au secours de George afin de gagner ses ailes. Avec lui, nous revivons les années écoulées dans la vie de George .Ayant renoncé à son rêve d\'enfant de devenir explorateur, pour reprendre la banque de son père, il a toujours consacré son énergie et son argent à l\'amélioration des conditions de vie des habitants de la ville, en luttant contre le désir de puissance d\'un homme d\'affaires sans scrupules.',8.3,'1946','https://youtu.be/iLR3gZrU2Xo'),(10,'Edward aux mains d\'argent','https://www.themoviedb.org/t/p/w1280/tMCj9KY70NasF2KsiXWpg0m7smK.jpg','https://www.themoviedb.org/movie/162-edward-scissorhands','1h45','Edward n’est pas un garçon ordinaire. Création d’un inventeur, il a reçu un cœur pour aimer, un cerveau pour comprendre. Mais son concepteur est mort avant d’avoir pu terminer son œuvre et Edward se retrouve avec des lames de métal et des instruments tranchants en guise de doigts.',7.7,'1991','https://youtu.be/XdL1oR_L5EM'),(11,'Klaus','https://www.themoviedb.org/t/p/w1280/qb0eCUtvi2Rn5etdqFbaYzvIPYn.jpg','https://www.themoviedb.org/movie/508965-klaus','1h36','Un facteur égoïste et un fabricant de jouets solitaire forgent une amitié improbable, apportant la joie à une bourgade sombre et froide qui en a désespérément besoin.',8.2,'2019','https://youtu.be/h5gR4vUb2rA'),(12,'La Course aux jouets','https://www.themoviedb.org/t/p/w1280/pN98TAu71SfSVLPAUmWWDlKnTQx.jpg','https://www.themoviedb.org/movie/9279-jingle-all-the-way','1h26','Comme tous les enfants américains, et bientôt les autres, Jamie veut un Turbo Man pour Noël. Seulement son papa, homme d\'affaires stressé, a oublié sa promesse. Il s\'en souvient quelques heures avant la remise fatidique des cadeaux et part à la chasse au Turbo Man, qui n\'est plus disponible dans aucun magasin. Une course contre le temps et d\'autres acquéreurs du jouet s\'engage.',6,'1996','https://youtu.be/Tcj_k50GJxc'),(13,'Les Cinq légendes','https://www.themoviedb.org/t/p/w1280/51YlO5sXgchWvvibunzOtfPsDRF.jpg','https://www.themoviedb.org/movie/81188-rise-of-the-guardians','1h37','Il existe dans le monde, dissimulés aux yeux des humains, quatre êtres surnaturels dotés de grands pouvoirs qui protègent l’innocence et l’imaginaire des enfants : le Père Noël, le Lapin de Pâques, la Fée des dents et le Marchand de sable. Lorsqu’ils découvrent que Pitch, un esprit maléfique, œuvre pour répandre ruine et destruction sur le monde, ils réalisent que même en unissant leurs forces, ils ne seront pas de taille. Aussi tentent‐ils de rallier à leur cause Jack Frost, un jeune garçon insouciant et solitaire qui maîtrise le givre et le froid. Ce combat va permettre à Jack de comprendre quelle est sa place dans l’ordre de l’univers…',7.4,'2012','https://youtu.be/fVlx5D3x_5o'),(14,'Joyeux Noël','https://www.themoviedb.org/t/p/w1280/lZ2HM8khLugaTiA1j8S7NiVoxiB.jpg','https://www.themoviedb.org/movie/11661-joyeux-noel','1h56','Lorsque la guerre surgit au creux de l\'été 1914, elle surprend et emporte dans son tourbillon des millions d\'hommes. Nikolaus Sprink, prodigieux ténor à l\'opéra de Berlin, va devoir renoncer à sa belle carrière et surtout à celle qu\'il aime : Anna Sörensen, soprane et partenaire de chant. Le prêtre anglican Palmer s\'est porté volontaire pour suivre Jonathan, son jeune aide à l\'église. Ils quittent leur Ecosse, l\'un comme soldat, l\'autre comme brancardier. Le lieutenant Audebert a dû laisser sa femme enceinte et alitée pour aller combattre l\'ennemi. Mais depuis, les Allemands occupent la petite ville du Nord où la jeune épouse a probablement accouché à présent. Et puis arrive Noël, avec sa neige et son cortège de cadeaux des familles et des Etats majors. Mais la surprise ne viendra pas des colis généreux qui jonchent les tranchées françaises, écossaises et allemandes…',7.4,'2005','https://youtu.be/bnRgrxsQaIQ'),(15,'The Holiday','https://www.themoviedb.org/t/p/w1280/wpjqSv3I364qjEOhzktSaUQEyKS.jpg','https://www.themoviedb.org/movie/1581-the-holiday','2h15','Une Américaine, Amanda, et une Anglaise, Iris, toutes deux déçues des hommes, décident, sans se connaître, d\'échanger leurs appartements. Iris, va débarquer dans une demeure de rêve tandis que la distinguée Amanda découvre une petite maison de campagne sans prétentions. Les deux femmes pensent passer de paisibles vacances loin de la gente masculine, mais c\'était sans compter l\'arrivée du frère d\'Iris dans la vie d\'Amanda, et la rencontre de Miles pour Iris.',7.1,'2006','https://youtu.be/MaVNC5gjYHY'),(16,'Un jour sans fin','https://www.themoviedb.org/t/p/w1280/kSdgmtOmxFxdiJqK1R3kfKBqRUo.jpg','https://www.themoviedb.org/movie/137-groundhog-day','1h41','Phil Connors, présentateur météo grincheux et arrogant, doit tourner un reportage sur la fête de la marmotte. Mais lorsqu\'il se réveille le lendemain, il découvre avec stupeur que la date n\'a pas changé et qu\'il est condamné à revivre un par un les événements de la veille. Connors se voit dès lors obligé de faire face à la répétition infinie du Jour de la marmotte.',7.6,'1993','https://youtu.be/m8Z3PPOLvm8'),(17,'Charlie et la chocolaterie','https://www.themoviedb.org/t/p/w1280/lxzRFeCHblcE1vc4GVXGN0otrSA.jpg','https://www.themoviedb.org/movie/118-charlie-and-the-chocolate-factory','1h55','Charlie est un enfant issu d\'une famille pauvre. Travaillant pour subvenir aux besoins des siens, il doit économiser chaque penny, et ne peut s\'offrir les friandises dont raffolent les enfants de son âge. Pour obtenir son comptant de sucreries, il participe à un concours organisé par l\'inquiétant Willy Wonka, le propriétaire de la fabrique de chocolat de la ville. Celui qui découvrira l\'un des cinq tickets d\'or que Wonka a caché dans les barres de chocolat de sa fabrication gagnera une vie de sucreries.',7,'2005','https://youtu.be/ylC9q4yZx6s'),(18,'Harry Potter à l\'école des sorciers','https://www.themoviedb.org/t/p/w1280/fbxQ44VRdM2PVzHSNajUseUteem.jpg','https://www.themoviedb.org/movie/671-harry-potter-and-the-philosopher-s-stone','2h33','Orphelin, le jeune Harry Potter peut enfin quitter ses tyranniques oncle et tante Dursley lorsqu\'un curieux messager lui révèle qu\'il est un sorcier. À 11 ans, Harry va enfin pouvoir intégrer la légendaire école de sorcellerie de Poudlard, y trouver une famille digne de ce nom et des amis, développer ses dons, et préparer son glorieux avenir.',7.9,'2001','https://youtu.be/UMs6IqPievo');
+/*!40000 ALTER TABLE `movies` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
--- AUTO_INCREMENT pour la table `item`
+-- Table structure for table `recipes`
 --
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+DROP TABLE IF EXISTS `recipes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `recipes` (
+  `recipe_id` int NOT NULL AUTO_INCREMENT,
+  `recipe_title` varchar(250) NOT NULL,
+  `recipe_description` text NOT NULL,
+  `recipe_img` varchar(2050) NOT NULL,
+  `recipe_url` varchar(2050) NOT NULL,
+  `recipe_level` varchar(100) NOT NULL,
+  `recipe_type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`recipe_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recipes`
+--
+
+LOCK TABLES `recipes` WRITE;
+/*!40000 ALTER TABLE `recipes` DISABLE KEYS */;
+INSERT INTO `recipes` VALUES (1,'Minis blinis de saumon aux truffes','C\'est lors des fêtes que l\'on peut se faire plaisir en mangeant pleins de petits fours et tartines de ce genre... Essayer d\'en faire chez vous.','https://www.ptitchef.com/imgupl/recipe/minis-blinis-de-saumon-aux-truffes--md-70165p93833.jpg','https://www.ptitchef.com/recettes/aperitif/minis-blinis-de-saumon-aux-truffes-fid-12582','Facile','Apéritif'),(2,'Mini tatins de foie gras','Une recette sucrée-salée qui fera fureur auprès de vos invités lors de vos repas de fêtes.','https://www.ptitchef.com/imgupl/recipe/mini-tatins-de-foie-gras--lg-451661p699022.jpg','https://www.ptitchef.com/recettes/entree/mini-tatins-de-foie-gras-fid-1566682','Facile','Entrée'),(3,'Pourlarde Farcie au fois gras','Les fêtes de fin d\'années sont l\'occasion de réaliser des plats inédits et savoureux pour faire plaisir à vos convives et passer un bon moment autour d\'une poularde farcie au foie gras.','https://www.ptitchef.com/imgupl/recipe/pourlarde-farcie-au-fois-gras--md-954p1026.jpg','https://www.ptitchef.com/recettes/plat/pourlarde-farcie-au-fois-gras-fid-203571','Difficile','Plat'),(4,'Noix de Saint-Jacques flambées, sauce corail','Simple comme bonjour et parfaite pour un moment de fêtes réussi !','https://mycancalekitchen.com/wp-content/uploads/2017/04/corail-st-jacques.jpg','https://www.ptitchef.com/recettes/plat/noix-de-saint-jacques-flambees-sauce-corail-fid-1493220','Facile','Plat'),(5,'Chapon aux marrons traditionnel','Le chapon, la viande bien tendre qu\'on se régale de déguster pour Noël et/ou Nouvel an. Farcie avec du veau haché, des petits légumes et accompagnée de marrons, ça promet un plat de fêtes maison en bonne et due forme ! ','https://www.ptitchef.com/imgupl/recipe/chapon-aux-marrons-traditionnel--md-455155p706607.jpg','https://www.ptitchef.com/recettes/plat/chapon-aux-marrons-traditionnel-fid-1570119','Moyen','Plat'),(6,'Soufflés au fromage bien moelleux et aérés','Vous pensez que les soufflés au fromage sont difficiles à faire ? Détrompez-vous ! C\'est au contraire ultra simple.Vous n\'aurez qu\'à préparer la pâte puis à la mettre dans des petits ramequins individuels.','https://www.ptitchef.com/imgupl/recipe/souffles-au-fromage-bien-moelleux-et-aeres--lg-451108p697791.jpg','https://www.ptitchef.com/recettes/entree/souffles-au-fromage-faciles-fid-1566175','Moyen','Entrée'),(7,'Velouté de butternut chorizo noix','Un délicieux velouté bien réconfortant au butternut relevé par le chorizo et parfumé par la coriandre et le curcuma avec une petite touche croquante apportée par le concassé de noix.','https://www.ptitchef.com/imgupl/recipe/veloute-de-butternut-chorizo-noix--lg-383400p612812.jpg','https://www.ptitchef.com/recettes/entree/veloute-de-butternut-chorizo-noix-fid-1562620','Facile','Entrée'),(8,'Soupe feuilletée poireau pomme de terre','Rendons nos classiques soupes un peu plus chics et raffinées en leur ajoutant une coque feuilletée. Aussi appelée \'soupe en montgolfière\', cette recette ultra facile sera parfaite pour débuter les hostilités de vos repas de fêtes.','https://www.ptitchef.com/imgupl/recipe/soupe-feuilletee-poireau-pomme-de-terre--lg-455038p706234.jpg','https://www.ptitchef.com/recettes/plat/soupe-feuilletee-poireau-pomme-de-terre-fid-1570027','Facile','Plat'),(9,'Rôti de Porc aux Châtaignes & aux Cêpes','Un plat qui sent bon l\'automne, avec la présence de châtaignes légèrement caramélisées, de champignons et d\'un jus de cuisson épais et sirupeux.','https://static.saisons-vives.com/assets/imgupload/5/0/7/7/image_5077.jpg','https://www.ptitchef.com/recettes/plat/roti-de-porc-aux-chataignes-aux-cepes-fid-1136037','Moyen','Plat'),(10,'Bûche de Noël fourrée à la chantilly','Vous n\'avez pas d\'idées pour votre dessert du Noël ? Pas de panique, notre équipe est là et vous propose une recette de bûche de Noël fourrée à la chantilly.','https://www.ptitchef.com/imgupl/recipe/buche-de-noel-fourree-a-la-chantilly--lg-143661p215135.jpg','https://www.ptitchef.com/recettes/dessert/buche-de-noel-fourree-a-la-chantilly-fid-1558706','Facile','Dessert'),(11,'Bûche à la mangue et à la framboise','Et si vous faisiez la traditionnelle bûche de Noël vous-même cette année ?! On vous propose ici une recette aux saveurs fruitées puisqu\'elle allie mangue et framboise. L\'occasion de terminer ce repas de fêtes sur une note de fraîcheur !','https://www.ptitchef.com/imgupl/recipe/buche-a-la-mangue-et-a-la-framboise--lg-456382p709948.jpg','https://www.ptitchef.com/recettes/dessert/buche-a-la-mangue-et-a-la-framboise-fid-1571409','Difficile','Dessert'),(12,'Risotto de noix de St Jacques au safran','Pas envie de manger de viande pour les fêtes ? Optez pour les noix de Saint-Jacques ! Mises en scène dans une recette de risotto fait maison et parfumées au safran, vous ne résisterez pas à cette recette pour Noël !','https://www.ptitchef.com/imgupl/recipe/risotto-de-noix-de-st-jacques-au-safran--lg-455037p706231.jpg','https://www.ptitchef.com/recettes/plat/risotto-de-noix-de-st-jacques-au-safran-fid-1570028','Moyen','Plat'),(13,'Forêt-noire sans gluten','La preuve qu\'il est possible de se faire plaisir avec un beau gâteau, classique, et sans gluten !','https://www.ptitchef.com/imgupl/recipe/foret-noire-sans-gluten--lg-440230p681167.jpg','https://www.ptitchef.com/recettes/dessert/foret-noire-sans-gluten-fid-1110088','Facile','Dessert'),(14,'Truffes fondantes au chocolat','Un Noël sans chocolat ? Impossible ! Nous vous proposons une recette fondantes pour tous les mordus de chocolat !','https://www.ptitchef.com/imgupl/recipe/truffes-fondantes-au-chocolat--md-39949p48972.jpg','https://www.ptitchef.com/recettes/dessert/truffes-fondantes-au-chocolat-fid-1495134','Facile','Dessert'),(15,'Une bûche de noël sans gluten','Un dessert riche et gourmand, léger et fondant, délicieux et exquis, impressionnant et intéressant!','https://www.ptitchef.com/imgupl/recipe/ma-buche-de-noel-sans-gluten--lg-185479p280269.jpg','https://www.ptitchef.com/recettes/dessert/ma-buche-de-noel-sans-gluten-fid-199811','Facile','Dessert'),(16,'Sapin feuilleté à la tapenade maison','Des pâtes feuilletées, de la tapenade maison, mélangez le tout et obtenez un joli sapin croustillant pour l\'apéritif ! Une recette hyper simple à reproduire chez vous.','https://www.ptitchef.com/imgupl/recipe/sapin-feuillete-a-la-tapenade-maison--lg-457044p711763.jpg','https://www.ptitchef.com/recettes/aperitif/sapin-feuillete-a-la-tapenade-maison-fid-1571904','Facile','Apéritif'),(17,'Toasts au roquefort, noix et miel','Une association sucrée/salée mais aussi fondante/croquante. Idéale pour des apéritifs en fête !','https://www.ptitchef.com/imgupl/recipe/toasts-au-roquefort-noix-et-miel--lg-453343p702309.jpg','https://www.ptitchef.com/recettes/aperitif/toasts-au-roquefort-noix-et-miel-fid-1568168','Facile','Apéritif'),(18,'Meringues bonnets de Père Noël','À l\'approche des fêtes de fin d\'année, on s\'amuse à intégrer la magie de Noël dans nos recettes. La preuve avec ces petites meringues en forme de bonnet de Père Noël.','https://www.ptitchef.com/imgupl/recipe/meringues-bonnets-de-pere-noel--lg-455042p706251.jpg','https://www.ptitchef.com/recettes/dessert/meringues-bonnets-de-pere-noel-fid-1570022','Moyen','Dessert'),(19,'Tourte à la pintade au foie gras','Rendez votre pintade bien croustillante en l\'intégrant dans une recette de tourte ! Parfumée au porto blanc et associée à du foie gras, vous ne résisterez pas à cette préparation inratable !','https://www.ptitchef.com/imgupl/recipe/tourte-a-la-pintade-au-foie-gras--lg-454958p706001.jpg','https://www.ptitchef.com/recettes/plat/tourte-a-la-pintade-et-sa-sauce-fid-1569958','Moyen','Plat'),(20,'Bûche aux Ferrero Rochers','Vous connaissez sûrement les fameux Ferrero Rocher, et on ne doute pas que vous en raffiolez ! Pourquoi ne pas les intégrer dans votre recette de bûche cette année ?','https://www.ptitchef.com/imgupl/recipe/buche-aux-ferrero-rochers--lg-452260p700220.jpg','https://www.ptitchef.com/recettes/dessert/buche-aux-ferrero-rochers-fid-1567249','Facile','Dessert'),(21,'Bûche de crêpes framboise chocolat blanc','Vous aimez les crêpes et Noël ? Ça tombe bien on vous propose une bûche de crêpes pour votre dessert ;-) Facile et originale, cette recette expliquée pas à pas vous permettra de terminer votre repas de fêtes en beauté !','https://www.ptitchef.com/imgupl/recipe/buche-de-crepes-framboise-chocolat-blanc--lg-454997p706100.jpg','https://www.ptitchef.com/recettes/dessert/buche-de-crepes-framboise-chocolat-blanc-fid-1570012','Moyen','Dessert');
+/*!40000 ALTER TABLE `recipes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+DROP TABLE IF EXISTS `activities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `activities` (
+  `activity_id` int NOT NULL AUTO_INCREMENT,
+  `activity_title` varchar(250) NOT NULL,
+  `activity_time` varchar(20) NOT NULL,
+  `activity_desc` text NOT NULL,
+  `activity_img` varchar(2050) NOT NULL,
+  `activity_url` varchar(2050) NOT NULL,
+  PRIMARY KEY (`activity_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `activities`
+--
+
+LOCK TABLES `activities` WRITE;
+/*!40000 ALTER TABLE `activities` DISABLE KEYS */;
+INSERT INTO `activities` VALUES (1,'Réaliser des boules de Noël en papier origami','2h00','Suivez un tutoriel sur YouTube pour créer des boules de Noël en papier origami en utilisant des techniques simples et artistiques.','https://www.cchobby.fr/media/catalog/product/cache/2a3c115e4a1e5edcb78d5e967ca9ecf0/v/1/v15995.jpg','https://www.youtube.com/watch?v=T5lJ18yAQ50'),(2,'Réaliser des étoiles de Noël','2h00','Apprenez à confectionner des étoiles de Noël avec du papier à l\'aide d\'un modèle trouvé sur Pinterest, ajoutant une touche artisanale à votre décoration de fêtes','https://i.pinimg.com/474x/71/c8/5c/71c85ced497a765a5b2de6cf53b683ea.jpg','https://www.pinterest.fr/pin/68746415001/'),(3,'Concevez des cartes de Noël/Nouvel An','2h00','Créez des cartes de vœux personnalisées en suivant un tutoriel sur YouTube. Ajoutez des éléments créatifs pour partager vos vœux de manière unique.','https://resize.prod.femina.ladmedia.fr/rblr/652,438/img/var/2018-12/1544628166_diy-carte-voeux.jpg','https://www.youtube.com/watch?v=Y5rBxzlbqbw'),(4,'Profitez d\'un bon moment en famille à la patinoire de Bordeaux','3h00','Passez une journée en famille à la patinoire, partageant des rires et des glissades sur la glace','https://axelvega.com/wp-content/uploads/2021/11/img-patinoire-705x408.jpg','https://axelvega.com/etablissements/patinoire-bordeaux/'),(5,'Escape game à Bordeaux sur le thème des fêtes de fin d\'années','2h00','Vivez une expérience immersive avec un escape game sur le thème des fêtes de fin d\'année à Bordeaux-Lac.','https://www.wonderbox.fr/blog/wp-content/uploads/sites/4/2023/10/escape-game-noel-chasse-tresor-1.jpg','https://otopia.fr/bordeaux/escapegame#concept'),(6,'Créer sa propre couronne de Noël','2h00','Suivez un tutoriel en ligne pour créer une couronne de Noël avec des matériaux simples et naturels.','https://www.revillonchocolatier.fr/wp-content/uploads/2022/11/comment_decorer_soi_meme_sa_couronne_de_noel.jpg','https://www.youtube.com/watch?v=Dho7uRzAsTQ'),(7,'Un weekend sensation au Futuroscope','Journée','Passez un weekend magique au Futuroscope avec des attractions spéciales et une ambiance festive pour célébrer Noël','https://www.futuroscope.com/uploads/media/cache/card_left/upload/image/lutins-et-lapin-cretin.jpg','https://www.futuroscope.com/fr/infos-pratiques/actualites/noel-au-futuroscope'),(8,'Faites un tour au marché de Noël','4h00','Explorez le marché de Noël de Bordeaux, où vous pourrez trouver des cadeaux uniques, des décorations et des spécialités locales.','https://media.sudouest.fr/6887727/1000x500/so-5fbba23d66a4bd276bfbc439-ph0.jpg?v=1637754338','https://marche-de-noel-bordeaux.com/'),(9,'Plonger dans l\'univers d\'un Noël Canadien','2h20','Découvrez l\'ambiance chaleureuse d\'un Noël canadien en dégustant une délicieuse poutine et une bière sans gluten.','https://aunouveaumonde.fr/wp-content/uploads/2020/10/AuNouveauMonde_Biere25et50.jpg','https://aunouveaumonde.fr/'),(10,'Réaliser des décorations pour vos fenêtres','3h00','Utilisez les feutres Posca pour créer des décorations personnalisées sur vos fenêtres.','https://tse3.mm.bing.net/th?id=OIP.ZEBJHbXnT5j99dUNiElQZAHaGE&pid=Api&P=0&h=180','https://www.youtube.com/watch?v=YS6haMO_mko'),(11,'Création de bougies parfumées et gourmandes.','2h30','Partez à la création artisanale de bougies parfumées et gourmandes.','https://i.pinimg.com/474x/fd/ff/bc/fdffbc6703137629ccedd5a0b0146fac.jpg','https://www.youtube.com/watch?v=9-BC7YZgd3Y&pp=ygUbZGl5IGJvdWdpZXMgcGFyZnVtw6llcyBub2Vs'),(12,'Profitez d\'un déjeuner croisière sur la Garonne !','3h00','Et quel meilleur moyen d\'admirer les belles façades de Bordeaux depuis le fleuve ? Montez à bord du Sicambre pour un déjeuner-croisière, voguez dans le Port de la lune à bord d\'un bateau et profitez de la magie de Noël !','https://www.bordeaux-tourisme.com/sites/bordeaux_tourisme/files/inline-images/_MG_6258-2-Steve%20Le%20Clech%20Photos.jpg','https://lesbateauxbordelais.com/?gad_source=1&gclid=CjwKCAiAjfyqBhAsEiwA-UdzJNDQK3_1xhkpsz1XBS6XjDhozhEizvjca26yDwpKQqIEPZvYcieOkRoCeMcQAvD_BwE');
+/*!40000 ALTER TABLE `activities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gifts`
+--
+
+DROP TABLE IF EXISTS `gifts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `gifts` (
+  `gift_id` int NOT NULL AUTO_INCREMENT,
+  `gift_title` varchar(250) NOT NULL,
+  `gift_description` text NOT NULL,
+  `gift_img` varchar(2050) NOT NULL,
+  `gift_url` varchar(2050) NOT NULL,
+  `gift_price` float DEFAULT NULL,
+  PRIMARY KEY (`gift_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gifts`
+--
+
+LOCK TABLES `gifts` WRITE;
+/*!40000 ALTER TABLE `gifts` DISABLE KEYS */;
+INSERT INTO `gifts` VALUES (1,'Culottes menstruelles lavable','Moodz propose des culottes menstruelles inclusives, respectueuses de l\'environnement.','https://moodz.co/cdn/shop/files/1.ATTITUDE_bd57f743-c6b1-4e23-942b-7d4737adc7d2.jpg?v=1686729063','https://moodz.co/',30),(2,'Comme Avant, produit cosmétiques bio.','Comme avant fabrique des produits bio, efficaces et écologiques. Historiquement engagée dans la vente de cosmétiques, la marque vend également des vêtements.','https://www.comme-avant.bio/cdn/shop/files/4_ENSEMBLE_STUDIO_2500x2500_223d3d67-3533-4338-8b58-d1aa0b56198f_1080x.jpg?v=1700497082','https://www.comme-avant.bio/#ae581',20),(3,'Kit rasage au poil','Un rasage parfait en 3 temps ! Une huile de rasage pour préparer les poils et la peau, un rasoir de barbier pour passer la lame comme un pro et une pierre d’alun pour soulager les petits bobos… On a pour vous un super trio !','https://www.bigmoustache.com/2844-home_default/rasoir-de-barbier-huile-pierre.jpg','https://www.bigmoustache.com/fr/333-rasoir-de-barbier-huile-pierre.html',49),(4,'Attrapes-rêves créatif','L\'attrape-rêves est issu d\'une croyance amérindienne. Selon la légende, si on le place au-dessus de soi quand on dort, il attrape tous tes mauvais rêves... Dans ce kit : cinq plumes, un cercle cartonné, du fil et des perles pour réaliser un attrape-rêves du plus bel effet.À partir de 5/6 ans.','https://cahiersdeconstance.42stores.com/pub/.Capture_d_e_cran_2015-08-25_a_10.14.22_m.png','https://cahiersdeconstance.42stores.com/product/loisirs-creatif-attrape-reve-rose',12),(5,'Le Slip Français','Boxer 100% fabriqué en France, pensé et conçu pour durer','https://www.leslipfrancais.fr/cdn/shop/products/1e5e5644f96001cd0fc65df622820224c05bac1e.jpg?v=1694533552&width=1336','https://www.leslipfrancais.fr/products/michel-gris-chine-boxer-long-en-coton',49),(6,'La Mariole','Simple à utiliser pour jouer à la pétanque indoor ! ou outdoor : se joue de 15 ans à 99 ans','https://lamariole.com/cdn/shop/files/PACKQUATROTRANSPARENTLDcopie.jpg?v=1684833867&width=990','https://lamariole.com/products/la-mariole%E2%84%A2-petanque-tout-terrain',12),(7,'Mug Expression Française','Un mug en faïence fabriqué en France, sérigraphié avec des expressions françaises écrites et illustrées avec humour.','https://lesraffineurs.b-cdn.net/22554-thickbox_default_2022/mug-expression-francaise.jpg','https://www.lesraffineurs.com/du-palais/2782-mug-expression-francaise.html',14.9),(8,'Bières artisanales de la Brasserie collaboratives PIP','Découvrez les Bières artisanales de la Brasserie PIP de Bègles. A récupérer en click-collect, et participez aussi à leurs différents ateliers proposés sur leur site.','https://shop.maisonpip.com/cdn/shop/products/PIP_BLANCHE_PASSION_33CL_940x.jpg?v=1604347354','https://maisonpip.com/',3),(9,'Tee-shirts personnalisés','Vous cherchez un t shirt enfant pas cher pour un événement sportif, un centre de loisirs ou pour faire un cadeau personnalisé ? Le tee shirt Regent Kids est un basique incontournable au style contemporain qui ira à tous les enfants. Disponible dans une large gamme de couleurs pour s’adapter à tous vos projets, choisissez le coloris qui ira le mieux avec vos designs et personnalisez-le de façon simple et rapide avec vos textes, logos et photos !','https://mistertee.fr/sites/default/files/styles/mistertee_product_display_large/public/regentk.jpg','https://mistertee.fr/regent-kids',8),(10,'Affiche à gratter - 100 bières à boire dans sa vie','Une grande affiche à gratter, sur laquelle figurent toutes les plus grandes et les meilleures bières.','https://lesraffineurs.b-cdn.net/27276-thickbox_default_2022/affiche-a-gratter-100-bieres-a-boire-dans-sa-vie.jpg','https://www.lesraffineurs.com/vin-et-biere/4138-affiche-a-gratter-100-bieres-a-boire-dans-sa-vie.html',29.9),(11,'Trousse en ancienne voile de bateau','Produit unique réalisé en voile recyclée et fabriqué à la Ciotat en France !','https://www.lestoilesdularge.com/cdn/shop/products/trousse-plate-petit-les-toiles-du-large-voile-bateau-49177479151942.progressive.jpg?v=1681724584','https://www.lestoilesdularge.com/collections/pochette/products/trousse-plate-petit',22),(12,'Boules de Noël au gin','Un coffret de boules de Noël remplies de gin pour décorer son sapin avec une note d’originalité, et arroser la fin du réveillon. 6 boules de 5 cl. Distillerie La Grange ','https://lesraffineurs.b-cdn.net/19151-thickbox_default_2022/boules-de-noel-au-gin.jpg','https://www.lesraffineurs.com/du-gosier/2584-boules-de-noel-au-gin.html',29),(13,'Petite box pour enfant espion','Enquête en Cavale propose aux enfants de se glisser dans la peau d\'un espion et de résoudre des enquêtes par correspondance (à partir de 7 ans).','https://www.marques-de-france.fr/wp-content/uploads/2019/12/Enquete-en-cavale-puce-a-loreille2-768x768.jpg','https://www.marques-de-france.fr/listing/en-cavale/',50),(14,'Petite arche pour bébé','L’arche d’éveil en bois avec ses mobiles suspendus. Entièrement en bois, fabriquée dans leur atelier familial des Hauts-de-France.','https://www.marques-de-france.fr/wp-content/uploads/2021/01/MaPetiteTribu-mobile-produit-phare-768x768.jpg','https://www.marques-de-france.fr/listing/mapetitetribu/',40),(15,'Livres Savoirs Terroirs','Un joli guide pratique illustré pour comprendre les bases du terroir et apprendre à choisir ses produits et les associer comme un pro.','https://lesraffineurs.b-cdn.net/28355-thickbox_default_2022/livres-savoirs-terroirs.jpg','https://www.lesraffineurs.com/a-table/4264-livres-savoirs-terroirs.html',12.9),(16,'Jeu d’ambiance Bananagrams','Un jeu d’ambiance pour 1 à 8 joueurs dans lequel chacun doit créer sa grille de mots fléchés devant lui et utiliser toutes ses lettres.','https://lesraffineurs.b-cdn.net/27349-large_default/jeu-bananagrams.jpg','https://www.lesraffineurs.com/outdoor-et-loisirs/4137-jeu-bananagrams.html',24);
+/*!40000 ALTER TABLE `gifts` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-11-23 15:16:26
