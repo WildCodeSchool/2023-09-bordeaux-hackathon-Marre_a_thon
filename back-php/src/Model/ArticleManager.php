@@ -34,5 +34,12 @@ class ArticleManager extends AbstractManager
         $statement->execute();
         return $statement->fetchAll();
     }
+    public function selectAllTest(): array
+    {
+        $query = "SELECT * FROM item";
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
 
 }

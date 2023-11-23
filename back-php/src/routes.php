@@ -12,4 +12,5 @@ return [
     'gifts' => ['AjaxController', 'getAllGifts'],
     'recipies' => ['AjaxController', 'getAllRecipes'],
     'activities' => ['AjaxController', 'getAllActivities'],
+    'test' => ['AjaxController', 'getAllItem'],
 ];
