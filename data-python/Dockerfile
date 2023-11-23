@@ -26,6 +26,9 @@ RUN pip3 install sweetviz
 # Machine Learning
 RUN pip3 install -U scikit-learn
 
+# SQL
+RUN pip3 install SQLAlchemy
+
 EXPOSE 8501
 
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
