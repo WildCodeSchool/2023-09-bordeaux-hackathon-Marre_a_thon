@@ -5,25 +5,25 @@ function Modal({ toggleModal, selectedId }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    if ([2, 4, 6, 10].includes(selectedId)) {
+    if ([1, 5, 9, 13, 17, 21].includes(selectedId)) {
       const getMovies = () =>
         axios.get("http://localhost:8000/movies").then((res) => {
           setData(res.data);
         });
       getMovies();
-    } else if ([3, 7, 9, 13].includes(selectedId)) {
-      const getRecipes = () =>
-        axios.get("http://localhost:8000/recipes").then((res) => {
+    } else if ([2, 6, 10, 14, 18, 22].includes(selectedId)) {
+      const getRecipies = () =>
+        axios.get("http://localhost:8000/recipies").then((res) => {
           setData(res.data);
         });
-      getRecipes();
-    } else if ([5, 8, 11, 14].includes(selectedId)) {
+      getRecipies();
+    } else if ([3, 7, 11, 15, 19, 23].includes(selectedId)) {
       const getGifts = () =>
         axios.get("http://localhost:8000/gifts").then((res) => {
           setData(res.data);
         });
       getGifts();
-    } else if ([1, 12, 15, 18].includes(selectedId)) {
+    } else if ([4, 8, 12, 16, 20, 24].includes(selectedId)) {
       const getActivities = () =>
         axios.get("http://localhost:8000/activities").then((res) => {
           setData(res.data);
@@ -50,6 +50,25 @@ function Modal({ toggleModal, selectedId }) {
               <img src={item.recipe_img} alt="photo de la recette" />
               <p>{item.recipe_description}</p>
               <a href={item.recipe_url}>{item.recipe_url}</a>
+            </>
+          )}
+
+          {item.gift_title && (
+            <>
+              <h2>{item.gift_title}</h2>
+              <img src={item.gift_img} alt="photo de la recette" />
+              <p>{item.gift_description}</p>
+              <a href={item.gift_url}>{item.recipe_url}</a>
+            </>
+          )}
+
+          {item.activity_title && (
+            <>
+              <h2>{item.activity_title}</h2>
+              <img src={item.activity_img} alt="photo de la recette" />
+              <p>{item.activity_desc}</p>
+              <p>Durée : {item.activity_time}</p>
+              <a href={item.activity_url}>{item.recipe_url}</a>
             </>
           )}
         </div>

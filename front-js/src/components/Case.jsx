@@ -46,7 +46,7 @@ function Case() {
           type="button"
           onClick={() => handleButtonClick(item.id)}
         >
-          {item.label}
+          {item.id}
         </button>
       ))}
       <div className={`popup${toggleModal === true ? " active" : ""}`}>
