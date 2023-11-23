@@ -18,6 +18,9 @@
 --
 -- Table structure for table `movies`
 --
+DROP DATABASE IF EXISTS bordeaux_hackaton;
+CREATE DATABASE bordeaux_hackaton;
+USE bordeaux_hackaton;
 
 DROP TABLE IF EXISTS `movies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -39,9 +42,6 @@ CREATE TABLE `movies` (
 --
 -- Dumping data for table `movies`
 --
-DROP DATABASE IF EXISTS bordeaux_hackaton;
-CREATE DATABASE bordeaux_hackaton;
-USE bordeaux_hackaton;
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
