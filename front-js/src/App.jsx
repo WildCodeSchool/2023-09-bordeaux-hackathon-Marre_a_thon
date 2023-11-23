@@ -1,6 +1,8 @@
 import "./styles/main.scss";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Calendar from "./components/Calendar";
+
 // import axios from "axios";
 // import React, { useState } from "react";
 
@@ -68,6 +70,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <Calendar />
       <Footer />
     </div>
   );
