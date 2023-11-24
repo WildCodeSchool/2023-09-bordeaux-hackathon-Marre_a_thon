@@ -1,15 +1,13 @@
 .case-container {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     position: relative;
     perspective: 1500px;
-    margin: 100px auto;
   
     .page {
       width: calc(100% + 16px);
       height: calc(100% + 16px);
-      margin-top: -8px;
-      margin-left: -6px;
+      margin-left: -7px;
       background-color: green;
       transform-origin: left;
       transform: rotateY(0deg);
@@ -21,7 +19,7 @@
     
   }
 
-  .toggleModal.active .page {
+  .modal.active .page {
     transform: rotateY(-95deg);
   }
   
