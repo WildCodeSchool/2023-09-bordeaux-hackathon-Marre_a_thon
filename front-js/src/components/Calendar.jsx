@@ -8,7 +8,7 @@ function Calendar({ movies, setMovies }) {
       </div>
       <div className="video-background">
         <video autoPlay loop muted playsInline>
-          <source src="./src/assets/videoCalendar.mp4" type="video/mp4" />
+          <source src="./src/assets/background-video-site.mov" type="video/mp4" />
         </video>
         
       </div>
