@@ -49,7 +49,7 @@ function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
           </svg>
         </button>
         {data.map((item, index) => (
-          <div key={index}>
+          <div className="popup-container" key={index}>
             {item.movie_title && (
               <>
                 <h2>{item.movie_title}</h2>
