@@ -78,7 +78,7 @@ function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
                 <img src={item.gift_img} alt="photo de la recette" />
                 <p>{item.gift_description}</p>
                 <a target="_blank" href={item.gift_url}>
-                  {item.recipe_url}
+                  {item.gift_url}
                 </a>
               </>
             )}
@@ -90,7 +90,7 @@ function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
                 <p>{item.activity_desc}</p>
                 <p>Durée : {item.activity_time}</p>
                 <a target="_blank" href={item.activity_url}>
-                  {item.recipe_url}
+                  {item.activity_url}
                 </a>
               </>
             )}
