@@ -232,6 +232,32 @@ button.item {
   }
 }
 
+.modal {
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 3rem;
+  }
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 450px;
+    background: rgba(270, 255, 270, 0.7);
+    border-bottom-left-radius: -800px;
+    border-bottom-right-radius: -800px; 
+    border-top-left-radius: 800px; 
+    border-top-right-radius: 800px; 
+    box-shadow: 2px 2px 18px #ececec;
+    padding: 30px;
+    text-align: center;
+    color: #b37534;
+   
+  }
+
 @import url("_card.scss");
 
 @media screen and (min-width: 768px) {
