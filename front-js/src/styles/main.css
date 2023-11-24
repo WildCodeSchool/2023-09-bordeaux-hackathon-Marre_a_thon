@@ -24,9 +24,6 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-body span {
-  background-color: red;
-}
 
 header,
 footer {
@@ -42,6 +39,20 @@ header {
   box-shadow: 2px 2px 18px #ececec;
   padding: 30px;
   text-align: center;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom-left-radius: -800px;
+  border-bottom-right-radius: -800px;
+  border-top-left-radius: 800px;
+  border-top-right-radius: 800px;
+  box-shadow: 2px 2px 18px #ececec;
+  padding: 30px;
+  text-align: center;
+  color: #b37534;
 }
 
 .logo {
@@ -117,21 +128,43 @@ video {
 .popup .popup-inner {
   width: 100%;
   max-width: 800px;
-  background-color: white;
+  background-image: url("../assets/fond.jpg");
   border-radius: 15px;
   height: 80vh;
   overflow-y: auto;
   padding: 30px;
-  transition: all 10s;
+  padding-top: 60px;
+  position: relative;
 }
 .popup .popup-inner img {
   width: 100%;
   height: auto;
   max-width: 400px;
+  border-radius: 20px;
+  border: 3px solid white;
+}
+.popup .popup-inner .popup-container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "Crimson Pro", serif;
+}
+.popup .popup-inner h2 {
+  font-size: 40px;
+}
+.popup .popup-inner p {
+  font-size: 25px;
+}
+.popup .popup-inner a {
+  font-size: 17px;
 }
 
 .close-button {
   font-size: 40px;
+  position: absolute;
+  right: 30px;
+  top: 20px;
 }
 
 button.item {
@@ -158,14 +191,14 @@ button.item {
 .popup-inner {
   /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: rgba(32, 33, 36, 0.4980392157) #ffffff;
+  scrollbar-color: red;
 }
 .popup-inner::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 .popup-inner::-webkit-scrollbar-thumb {
-  background-color: rgba(32, 33, 36, 0.4980392157);
+  background-color: #035f48;
   border-radius: 6px;
 }
 .popup-inner::-webkit-scrollbar-track {
