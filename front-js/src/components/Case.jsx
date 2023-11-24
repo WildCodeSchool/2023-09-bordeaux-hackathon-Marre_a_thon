@@ -35,7 +35,6 @@ function Case() {
             >
               <div className={`toggleModal`}>
                 <div className="page">
-                  <span>{item.label}</span>
                 </div>
               </div>
             </button>
