@@ -15,6 +15,10 @@
     transform-style: preserve-3d;
     position: absolute;
     background-size: contain;
+
+    &:hover {
+      transform: rotateY(-30deg);
+    }
   }
 }
 

@@ -55,8 +55,8 @@ function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
                 <h2>{item.movie_title}</h2>
                 <img src={item.movie_img} alt="photo du film" />
                 <p>{item.movie_desc}</p>
-                <a target="_blank" href={item.movie_url}>
-                  {item.movie_url}
+                <a className="btn" target="_blank" href={item.movie_url}>
+                Voir plus
                 </a>
               </>
             )}
@@ -66,8 +66,8 @@ function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
                 <h2>{item.recipe_title}</h2>
                 <img src={item.recipe_img} alt="photo de la recette" />
                 <p>{item.recipe_description}</p>
-                <a target="_blank" href={item.recipe_url}>
-                  {item.recipe_url}
+                <a className="btn" target="_blank" href={item.recipe_url}>
+                  Voir plus
                 </a>
               </>
             )}
@@ -77,8 +77,8 @@ function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
                 <h2>{item.gift_title}</h2>
                 <img src={item.gift_img} alt="photo de la recette" />
                 <p>{item.gift_description}</p>
-                <a target="_blank" href={item.gift_url}>
-                  {item.gift_url}
+                <a className="btn" target="_blank" href={item.gift_url}>
+                  Voir plus
                 </a>
               </>
             )}
@@ -89,8 +89,8 @@ function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
                 <img src={item.activity_img} alt="photo de la recette" />
                 <p>{item.activity_desc}</p>
                 <p>Durée : {item.activity_time}</p>
-                <a target="_blank" href={item.activity_url}>
-                  {item.activity_url}
+                <a className="btn" target="_blank" href={item.activity_url}>
+                  Voir plus
                 </a>
               </>
             )}
