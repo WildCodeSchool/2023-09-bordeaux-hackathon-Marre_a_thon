@@ -37,22 +37,22 @@ header {
   border-bottom-left-radius: 400px;
   border-bottom-right-radius: 400px;
   box-shadow: 2px 2px 18px #ececec;
-  padding: 30px;
   text-align: center;
 }
 
 footer {
   margin: 0 auto;
   max-width: 450px;
-  background: rgba(255, 255, 255, 0.7);
-  border-bottom-left-radius: -800px;
-  border-bottom-right-radius: -800px;
+  background: rgba(255, 255, 255, 0.95);
   border-top-left-radius: 800px;
   border-top-right-radius: 800px;
   box-shadow: 2px 2px 18px #ececec;
-  padding: 30px;
   text-align: center;
   color: #b37534;
+  padding: 20px 40px !important;
+}
+footer p {
+  font-size: 20px !important;
 }
 
 button {
@@ -79,6 +79,21 @@ button {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+}
+
+.btn {
+  padding: 8px 24px;
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid #035f48;
+  color: black;
+}
+.btn:hover {
+  background-color: #035f48;
+  color: white;
+}
+.btn:hover, .btn {
+  transition: all 0.3s;
 }
 
 video {
@@ -109,14 +124,18 @@ video {
 .popup {
   opacity: 0;
   z-index: -10;
-  transition: all 10s;
   position: fixed;
   width: 100vw;
   height: 100%;
-  transition: all 1s 0.5s, z-index 0s 0.5s;
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
   left: 0;
+  transition: opacity 0.5s ease-in-out 0.25s, z-index 0s ease-in-out 0.8s;
+}
+.popup.active {
+  opacity: 1;
+  z-index: 10;
+  transition: opacity 0.5s ease-in-out;
 }
 .popup > div {
   display: grid;
@@ -124,10 +143,6 @@ video {
   align-items: center;
   height: 100%;
   width: 100%;
-}
-.popup.active {
-  opacity: 1;
-  z-index: 10;
 }
 .popup .popup-inner {
   width: 100%;
@@ -224,6 +239,16 @@ button.item {
 .calendar .modal {
   width: 200px;
   height: 200px;
+}
+
+.modal {
+  position: relative;
+}
+.modal span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 3rem;
 }
 
 @media screen and (min-width: 768px) {
