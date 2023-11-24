@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function Modal({ toggleModal, selectedId }) {
+function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -33,46 +33,55 @@ function Modal({ toggleModal, selectedId }) {
   }, [selectedId]);
   return (
     <div>
-      {data.map((item, index) => (
-        <div key={index}>
-          {item.movie_title && (
-            <>
-              <h2>{item.movie_title}</h2>
-              <img src={item.movie_img} alt="photo du film" />
-              <p>{item.movie_desc}</p>
-              <a href={item.movie_url}>{item.movie_url}</a>
-            </>
-          )}
+      <div className="popup-inner">
+        <button
+          type="button"
+          className="close-button"
+          onClick={() => setActiveModal(!activeModal)}
+        >
+          X
+        </button>
+        {data.map((item, index) => (
+          <div key={index}>
+            {item.movie_title && (
+              <>
+                <h2>{item.movie_title}</h2>
+                <img src={item.movie_img} alt="photo du film" />
+                <p>{item.movie_desc}</p>
+                <a href={item.movie_url}>{item.movie_url}</a>
+              </>
+            )}
 
-          {item.recipe_title && (
-            <>
-              <h2>{item.recipe_title}</h2>
-              <img src={item.recipe_img} alt="photo de la recette" />
-              <p>{item.recipe_description}</p>
-              <a href={item.recipe_url}>{item.recipe_url}</a>
-            </>
-          )}
+            {item.recipe_title && (
+              <>
+                <h2>{item.recipe_title}</h2>
+                <img src={item.recipe_img} alt="photo de la recette" />
+                <p>{item.recipe_description}</p>
+                <a href={item.recipe_url}>{item.recipe_url}</a>
+              </>
+            )}
 
-          {item.gift_title && (
-            <>
-              <h2>{item.gift_title}</h2>
-              <img src={item.gift_img} alt="photo de la recette" />
-              <p>{item.gift_description}</p>
-              <a href={item.gift_url}>{item.recipe_url}</a>
-            </>
-          )}
+            {item.gift_title && (
+              <>
+                <h2>{item.gift_title}</h2>
+                <img src={item.gift_img} alt="photo de la recette" />
+                <p>{item.gift_description}</p>
+                <a href={item.gift_url}>{item.recipe_url}</a>
+              </>
+            )}
 
-          {item.activity_title && (
-            <>
-              <h2>{item.activity_title}</h2>
-              <img src={item.activity_img} alt="photo de la recette" />
-              <p>{item.activity_desc}</p>
-              <p>Durée : {item.activity_time}</p>
-              <a href={item.activity_url}>{item.recipe_url}</a>
-            </>
-          )}
-        </div>
-      ))}
+            {item.activity_title && (
+              <>
+                <h2>{item.activity_title}</h2>
+                <img src={item.activity_img} alt="photo de la recette" />
+                <p>{item.activity_desc}</p>
+                <p>Durée : {item.activity_time}</p>
+                <a href={item.activity_url}>{item.recipe_url}</a>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
