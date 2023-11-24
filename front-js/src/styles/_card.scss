@@ -1,7 +1,6 @@
 .case-container {
     width: 200px;
     height: 200px;
-    perspective: 600px;
     position: relative;
     perspective: 1500px;
     margin: 100px auto;
@@ -19,9 +18,11 @@
       position: absolute;
     }
   
-    &.active .page {
-      transform: rotateY(-95deg);
-    }
+    
+  }
+
+  .toggleModal.active .page {
+    transform: rotateY(-95deg);
   }
   
   .cube {

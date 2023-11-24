@@ -2,11 +2,12 @@ import logo from "../assets/logo.png";
 
 function Header() {
   return (
-    <header className="container d-flex-center">
+    <header>
       <img className="logo" src={logo} alt="logo" />
-      <p className="description_header">
+      <p class="description_header">
         Émerveillez-vous, chaque jour, <br />
-        avec des idées Made in France.
+        avec des idées <br />
+        <span>Made in France</span>
       </p>
     </header>
   );

@@ -10,6 +10,7 @@ function Calendar({ movies, setMovies }) {
         <video autoPlay loop muted playsInline>
           <source src="./src/assets/videoCalendar.mp4" type="video/mp4" />
         </video>
+        
       </div>
     </>
   );
