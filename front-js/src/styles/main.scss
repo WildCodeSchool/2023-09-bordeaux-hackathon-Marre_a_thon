@@ -23,6 +23,10 @@ body {
   z-index: -1;
   margin: 0;
   font-family: "Poppins", sans-serif;
+
+  span {
+    background-color: red;
+  }
 }
 
 header,
@@ -138,12 +142,23 @@ video {
 button.item {
   display: block;
   position: absolute;
-  top: calc(100% - 110px);
-  left: calc(100% - 140px);
-  background-color: white;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  top: calc(100% - 120px);
+  left: calc(100% - 150px);
+  width: 100px;
+  height: 100px;
+  background-image: url("../assets/gift.png");
+  background-size: cover;
+  font-size: 0;
+  animation: anim-item 4s linear infinite;
+}
+
+@keyframes anim-item {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 .popup-inner {
@@ -182,21 +197,13 @@ button.item {
   }
 }
 
-.modal {
-  position: relative;
 
-  span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 3rem;
-  }
-}
 
 @import url("_card.scss");
 
 @media screen and (min-width: 768px) {
   .footer {
     font-size: 28px;
+  
   }
 }
