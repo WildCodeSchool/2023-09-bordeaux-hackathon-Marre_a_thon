@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function Modal({ toggleModal, selectedId, activeModal, setActiveModal }) {
+function Modal({ selectedId, activeModal, setActiveModal }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
